@@ -3,77 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenida a Amilka</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-            background-color: #f8f8f8;
-            color: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .logo {
-            width: 120px;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-in-out forwards;
-        }
-
-        h1 {
-            font-size: 2em;
-            font-weight: 700;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-in-out forwards 0.5s;
-        }
-
-        p {
-            font-size: 1em;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-in-out forwards 1s;
-        }
-
-        .btn {
-            background-color: #EBACED;
-            color: #000;
-            font-size: 1.2em;
-            font-weight: bold;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: transform 0.2s ease-in-out;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-in-out forwards 1.5s;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <img src="Amilka_ícono.png" alt="Logo de Amilka" class="logo">
-    <h1>Bienvenida a Amilka</h1>
-    <p>En Amilka sabemos que Lactar es Amar</p>
-    <button class="btn">Continuar</button>
+    <div class="container">
+        <div id="welcome-screen" class="fade-in">
+            <h2>¡Bienvenida!</h2>
+            <button id="start-btn">Continuar</button>
+        </div>
+
+        <form id="registration-form" class="hidden fade-in">
+            <h3>Hola, vamos a crear tu usuario para conocernos mejor.</h3>
+
+            <label>Nombre:</label>
+            <input type="text" id="nombre" required>
+
+            <label>Apellido:</label>
+            <input type="text" id="apellido" required>
+
+            <label>Edad:</label>
+            <input type="number" id="edad" required>
+
+            <label>¿Es tu primer hijo?</label>
+            <select id="primer-hijo">
+                <option value="sí">Sí</option>
+                <option value="no">No</option>
+            </select>
+
+            <div id="numero-hijo-container" class="hidden">
+                <label>¿Qué número de hijo es?</label>
+                <input type="number" id="numero-hijo">
+            </div>
+
+            <label>Sexo del bebé:</label>
+            <select id="sexo-bebe">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="no-sabe">No sabe</option>
+            </select>
+
+            <label>Nombre del bebé:</label>
+            <input type="text" id="nombre-bebe" placeholder="Si aún no tiene, deja en blanco">
+
+            <label>¿Ya tuviste a tu bebé?</label>
+            <select id="bebe-nacido">
+                <option value="no">No</option>
+                <option value="sí">Sí</option>
+            </select>
+
+            <div id="embarazo-container" class="hidden">
+                <label>¿Cuántos meses de embarazo tienes?</label>
+                <input type="number" id="meses-embarazo">
+            </div>
+
+            <div id="tiempo-bebe-container" class="hidden">
+                <label>¿Cuánto tiempo tiene tu bebé?</label>
+                <input type="text" id="tiempo-bebe">
+            </div>
+
+            <button type="submit">Crear cuenta</button>
+        </form>
+
+        <div id="success-screen" class="hidden fade-in">
+            <h2 id="success-message"></h2>
+            <p>Comencemos este proceso nutriendo amor, un día a la vez. 💕</p>
+            <button id="continue-btn" class="hidden">Continuar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
