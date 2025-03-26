@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida a Amilka</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .logo {
+            width: 120px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: 700;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards 0.5s;
+        }
+
+        p {
+            font-size: 1em;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards 1s;
+        }
+
+        .btn {
+            background-color: #EBACED;
+            color: #000;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s ease-in-out;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards 1.5s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="Amilka_ícono.png" alt="Logo de Amilka" class="logo">
+    <h1>Bienvenida a Amilka</h1>
+    <p>En Amilka sabemos que Lactar es Amar</p>
+    <button class="btn">Continuar</button>
+</body>
+</html>
